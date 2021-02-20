@@ -9,6 +9,8 @@ import { ImageCropperResult } from './cropper/cropper.component';
 export class AppComponent {
   title = 'angular-cropper-sample';
   imageUrl = '/assets/images/sample-pic.jpg';
+
+  // Cropper.jsに渡すためのオプション設定です
   config = {
     aspectRatio: 1,
     dragMode: 'move',
@@ -40,10 +42,12 @@ export class AppComponent {
   }
 
   private cropMoved() {
+    // TODO デバッグ用です。
     console.log('cropMoved executed.');
   }
 
   private ready() {
+    // TODO デバッグ用です。
     console.log('ready executed.');
   }
 }

@@ -92,6 +92,7 @@ export class CropperComponent implements OnInit {
   }
 
   imageLoadError($event: ErrorEvent) {
+    // TODO デバッグ用の処理です。
     console.error($event);
   }
 
@@ -114,7 +115,10 @@ export class CropperComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  onClickFileInputButton() {
+  /**
+   * ファイル選択ボタン押下時の処理です。
+   */
+  clickFileInput() {
     this.fileInput.nativeElement.click();
   }
 }

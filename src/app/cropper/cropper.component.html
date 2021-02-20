@@ -1,6 +1,6 @@
 <div class='container'>
   <!-- Cropper用イメージタグ -->
-  <img #image alt="image" [src]="imageUrl" (load)="imageLoaded($event)" (error)="imageLoadError($event)" />
+  <img alt="image" [src]="imageUrl" (load)="imageLoaded($event)" (error)="imageLoadError($event)" />
 
   <!-- ダウンロードボタン -->
   <button mat-raised-button color="primary" (click)='exportCanvas()'>
@@ -22,7 +22,7 @@
   <ng-container>
     <input class='file-upload-input' #fileInput type="file" accept="image/*" (change)="handleFileInput($event)"/>
 
-    <button mat-raised-button color="primary" (click)="onClickFileInputButton()">
+    <button mat-raised-button color="primary" (click)="clickFileInput()">
       <mat-icon>attach_file</mat-icon>
       ファイルを選択
     </button>
