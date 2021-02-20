@@ -1,0 +1,38 @@
+<div class='container'>
+  <!-- Cropper用イメージタグ -->
+  <img #image alt="image" [src]="imageUrl" (load)="imageLoaded($event)" (error)="imageLoadError($event)" />
+
+  <!-- ダウンロードボタン -->
+  <button mat-raised-button color="primary" (click)='exportCanvas()'>
+    <mat-icon>cloud_download</mat-icon>
+    ダウンロード
+  </button>
+
+  <!-- 画像回転ボタン -->
+  <button mat-raised-button color="primary" (click)='rotate(90)'>
+    <mat-icon>rotate_right</mat-icon>
+    右回転
+  </button>
+  <button mat-raised-button color="primary" (click)='rotate(-90)'>
+    <mat-icon>rotate_left</mat-icon>
+    左回転
+  </button>
+
+  <!-- 画像アップロードボタン -->
+  <ng-container>
+    <input class='file-upload-input' #fileInput type="file" accept="image/*" (change)="handleFileInput($event)"/>
+
+    <button mat-raised-button color="primary" (click)="onClickFileInputButton()">
+      <mat-icon>attach_file</mat-icon>
+      ファイルを選択
+    </button>
+
+    <ng-container *ngIf="!fileName; else fileNameLabel">
+      ファイルが選択されていません
+    </ng-container>
+    <ng-template #fileNameLabel>
+      {{ fileName }}
+    </ng-template>
+  </ng-container>
+
+</div>
